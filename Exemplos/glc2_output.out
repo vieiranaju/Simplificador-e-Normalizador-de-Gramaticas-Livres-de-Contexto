@@ -12,6 +12,6 @@ Etapa 3: Produções vazias
 S -> aXa | bXb
 X -> a | b
 
-Etapa 4: Substituição de produções
+Etapa 4: Substituição de produções unitárias
 S -> aXa | bXb
 X -> a | b
