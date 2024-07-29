@@ -19,6 +19,7 @@ Este repositório contém um projeto para simplificar e normalizar gramáticas l
 - `simplificacao.py`: Algoritmos de Simplificação.
 - `cnf.py`: Algoritmo de Normalização para Forma de Chomsky.
 - `gnf.py`: Algoritmo de Normalização para Forma de Greibach.
+- `utils.py`: Funções comuns de leitura e escrita.
 - `README.md`: Este arquivo.
 - `exemplos/`: Pasta contendo exemplos de arquivos `.glc` e `.out`.
 
