@@ -2,6 +2,7 @@ import sys
 from utils import ler_gramatica, escrever_etapa, escrever_intermediarias
 from simplificacao import remover_inuteis_e_inalcancaveis, remover_producoes_vazias, substituir_producoes_unitarias
 from cnf import normalizar_para_cnf
+from gnf import normalizar_para_gnf
 
 def simplificar_gramatica(producoes, f):
     escrever_etapa(1, "Gramática original", producoes, f)
@@ -15,12 +16,15 @@ def simplificar_gramatica(producoes, f):
     producoes = substituir_producoes_unitarias(producoes)
     escrever_etapa(4, "Substituição de produções unitárias", producoes, f)
 
-    producoes_cnf, intermediarias = normalizar_para_cnf(producoes)
-
+    producoes_cnf, intermediarias_cnf = normalizar_para_cnf(producoes)
     escrever_etapa(5, "Normalização para CNF", producoes_cnf, f)
-    escrever_intermediarias(intermediarias, f)
+    escrever_intermediarias(intermediarias_cnf, f)
 
-    return producoes_cnf
+    producoes_gnf, intermediarias_gnf = normalizar_para_gnf(producoes_cnf)
+    escrever_etapa(6, "Normalização para GNF", producoes_gnf, f)
+    escrever_intermediarias(intermediarias_gnf, f)
+
+    return producoes_gnf
 
 def main(glc_file, output_file):
     producoes = ler_gramatica(glc_file)
