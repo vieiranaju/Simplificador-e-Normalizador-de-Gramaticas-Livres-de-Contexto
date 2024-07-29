@@ -1,0 +1,43 @@
+
+Etapa 1: Gramática original
+S -> BaS | BA | @
+A -> aA | a | @
+B -> bS | A | bb
+C -> Ba | EDb
+D -> c | d | @
+
+Etapa 2: Símbolos inúteis/inalcançáveis
+S -> BaS | BA
+A -> aA | a
+B -> bS | A | bb
+
+Etapa 3: Produções vazias
+S -> BaS | BA
+A -> aA | a
+B -> bS | A | bb
+
+Etapa 4: Substituição de produções unitárias
+S -> BaS | BA
+A -> aA | a
+B -> bS | bb | aA | a
+
+Etapa 5: Normalização para CNF
+S -> BC | BA
+A -> ZD | a
+B -> ZE | ZF | ZG | a
+ZB -> b
+ZA -> a
+
+Variáveis Intermediárias:
+C -> ZAS
+D -> AA
+E -> BS
+F -> BZB
+G -> AA
+
+Etapa 6: Normalização para GNF
+S -> ZEC | ZFC | ZGC | ZAC | ZEA | ZFA | ZGA | ZAA
+A -> ZD | ZA
+B -> ZE | ZF | ZG | ZA
+ZB -> ZB
+ZA -> ZA
